@@ -6,10 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ApiController extends Controller {
 
-    
+    private $urlBase = 'http://52.24.48.238/';
 
     public function recargaCelular($parametros) {
-        $apiUrl = "http://operadorcelular.dev/app_dev.php/api/recarga";
+        $apiUrl = $this->urlBase."api/recarga";
 
         //Lo primerito, creamos una variable iniciando curl, pasándole la url
         $ch = \curl_init($apiUrl);
@@ -38,7 +38,7 @@ class ApiController extends Controller {
     }
     
     public function getRecargaCliente($parametros){
-        $apiUrl = "http://operadorcelular.dev/app_dev.php/api/recarga-cliente";
+        $apiUrl = $this->urlBase."api/recarga-cliente";
         //Lo primerito, creamos una variable iniciando curl, pasándole la url
         $ch = \curl_init($apiUrl);
 
@@ -66,7 +66,7 @@ class ApiController extends Controller {
     }
     
     public function registrarLlamada($parametros){
-        $apiUrl = "http://operadorcelular.dev/app_dev.php/api/registrar-llamada";
+        $apiUrl = $this->urlBase."api/registrar-llamada";
         //Lo primerito, creamos una variable iniciando curl, pasándole la url
         $ch = \curl_init($apiUrl);
 
@@ -94,7 +94,7 @@ class ApiController extends Controller {
     }
     
     public function getConsumoCliente($parametros){
-        $apiUrl = "http://operadorcelular.dev/app_dev.php/api/ver-llamadas";
+        $apiUrl = $this->urlBase."api/ver-llamadas";
         //Lo primerito, creamos una variable iniciando curl, pasándole la url
         $ch = \curl_init($apiUrl);
 
@@ -122,7 +122,7 @@ class ApiController extends Controller {
     }
     
     public function consultaSaldo($parametros){
-        $apiUrl = "http://operadorcelular.dev/app_dev.php/api/consulta-saldo";
+        $apiUrl = $this->urlBase."api/consulta-saldo";
         //Lo primerito, creamos una variable iniciando curl, pasándole la url
         $ch = \curl_init($apiUrl);
 

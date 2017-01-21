@@ -1,8 +1,10 @@
 $(document).ready(function () {
     $('#boton-llamar').click(function () {
+        var no_celular;
+        no_celular = $("#no_celular_destino").val();
         $.ajax({
             dataType: "json",
-            url: "http://operadorcelular.dev/app_dev.php/api/consulta-saldo-disponible/3015192617",
+            url: "http://52.24.48.238/api/consulta-saldo-disponible/".no_celular,
         }).done(function (data) {
             console.log(data);
             var valorLlamada;
