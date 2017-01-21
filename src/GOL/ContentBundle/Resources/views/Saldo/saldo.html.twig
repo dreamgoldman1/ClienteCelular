@@ -1,0 +1,91 @@
+{% extends 'cliente.html.twig' %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="page-content">
+            <!-- BEGIN BREADCRUMBS -->
+            <div class="breadcrumbs">
+                <h1>Consultar Saldo</h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{{ env }}">Inicio</a>
+                    </li>
+                    <li class="active">Consultar Saldo</li>
+                </ol>
+            </div>
+            <!-- END BREADCRUMBS -->
+            <!-- BEGIN PAGE BASE CONTENT -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light portlet-fit portlet-form bordered" id="form_wizard_1">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class=""></i>
+                                <span class="caption-subject font-green sbold uppercase">Consulta de saldo</span>
+                            </div>
+                        </div>
+
+                        {% if dataSaldo is defined %}
+                        <div class="portlet light ">
+                            <div class="portlet-title">
+                                <div class="note note-success">
+                                    <div class="row">
+                                        <h3>
+                                            # Celular: {{ dataSaldo.no_celular }}
+                                        </h3>
+                                        <dl class="col-md-4">
+                                            <dt>Saldo Actual ($)</dt>
+                                            <dd>$ {{ dataSaldo.saldo | number_format(0, ',', '.') }}</dd>
+                                        </dl>
+                                        <dl class="col-md-4">
+                                            <dt>Saldo en tiempo (Seg.)</dt>
+                                            <dd>{{ dataSaldo.saldo_tiempo | number_format(0, ',', '.') }}</dd>
+                                        </dl>
+                                        <dl class="col-md-4">
+                                            <dt>Valor del segundo</dt>
+                                            <dd>$ {{ dataSaldo.costo_actual | number_format(0, ',', '.') }}</dd>
+                                        </dl>
+                                        <dl class="col-md-4">
+                                            <dt>Total Recargas</dt>
+                                            <dd>$ {{ dataSaldo.total_recargas | number_format(0, ',', '.') }}</dd>
+                                        </dl>
+                                        <dl class="col-md-4">
+                                            <dt>Total Consumos</dt>
+                                            <dd>$ {{ dataSaldo.total_consumos | number_format(0, ',', '.') }}</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="portlet-body">
+                            <!-- BEGIN FORM-->
+                            <form action="" class="form-horizontal" method="POST">
+                                <div class="form-body">
+                                    <h3 class="form-section">Datos de consulta</h3>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3" for="no_celular"># de Celular </label>
+                                        <div class="col-md-4">
+                                            <input type="number" min="3000000000" max="3309999999" class="form-control" id="no_celular" name="no_celular">
+                                            <span class="help-block">Ingrese el número a consultar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="submit" class="btn green">Consutar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- END FORM-->
+                        </div>
+                    </div>
+                    <!-- END VALIDATION STATES-->
+                </div>
+            </div>
+            <!-- END PAGE BASE CONTENT -->
+        </div>
+    {% endblock %}

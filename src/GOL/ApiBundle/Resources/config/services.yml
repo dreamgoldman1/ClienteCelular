@@ -1,0 +1,4 @@
+services:
+    gol_api.api:
+        class: GOL\ApiBundle\Controller\ApiController
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

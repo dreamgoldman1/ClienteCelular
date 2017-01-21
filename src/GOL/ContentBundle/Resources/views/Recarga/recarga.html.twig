@@ -1,0 +1,85 @@
+{% extends 'cliente.html.twig' %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="page-content">
+            <!-- BEGIN BREADCRUMBS -->
+            <div class="breadcrumbs">
+                <h1>Recarga</h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{{ env }}">Inicio</a>
+                    </li>
+                    <li class="active">Recarga</li>
+                </ol>
+            </div>
+            <!-- END BREADCRUMBS -->
+            <!-- BEGIN PAGE BASE CONTENT -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light portlet-fit portlet-form bordered" id="form_wizard_1">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class=""></i>
+                                <span class="caption-subject font-green sbold uppercase">Realizar una recarga de saldo</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <!-- INICIA MENSAJES DE CONFIRMACION -->
+                            {% if respuesta is defined %}
+                                {% if respuesta.Estado == 'Ok' %}
+                                    <div id="confirmacion" class="custom-alerts alert alert-success fade in">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                                        <i class="fa-lg fa fa-check-square"></i>  Se ha realizado la llamada de forma exitosa
+                                    </div>
+                                {% elseif respuesta.Estado == 'Error' %}
+                                    <div id="confirmacion" class="custom-alerts alert alert-danger fade in">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                                        <i class="fa-lg fa fa-warning"></i>  Se ha presentado un prolema al momento de realizar la llamada
+                                    </div>
+                                {% endif %}                            
+                                <!--
+                                <div id="confirmacion" class="custom-alerts alert alert-warning fade in">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                                    <i class="fa-lg fa fa-exclamation"></i>  Se ha realizado la recarga pero con problemas
+                                </div>
+                                -->
+                            {% endif %}
+                            <!-- FIN MENSAJES DE CONFIRMACION -->
+                            
+                            <!-- BEGIN FORM-->
+                            <form action="" class="form-horizontal" method="POST">
+                                <div class="form-body">
+                                    <h3 class="form-section">Datos de recarga</h3>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3" for="no_celular"># de Celular </label>
+                                        <div class="col-md-4">
+                                            <input type="number" min="3000000000" max="3309999999" class="form-control" id="no_celular" name="no_celular">
+                                            <span class="help-block">Ingrese el número a recargar</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3" for="valor_recarga">Valor $ </label>
+                                        <div class="col-md-4">
+                                            <input type="number" class="form-control" id="valor_recarga" name="valor_recarga">
+                                            <span class="help-block">Ingrese el nuevo valor de la recarga</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="submit" id="recargar-celular" class="btn green">Recargar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- END FORM-->
+                        </div>
+                    </div>
+                    <!-- END VALIDATION STATES-->
+                </div>
+            </div>
+            <!-- END PAGE BASE CONTENT -->
+        </div>
+    {% endblock %}

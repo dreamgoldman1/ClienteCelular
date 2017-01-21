@@ -1,0 +1,27 @@
+# HOME
+gol_content_homepage:
+    path:     /
+    defaults: { _controller: GOLContentBundle:Recarga:recarga }
+    
+# RECARGAS
+gol_content_recarga:
+    path:     /recarga
+    defaults: { _controller: GOLContentBundle:Recarga:recarga }
+    
+gol_content_ver_recargas:
+    path:     /ver-recargas
+    defaults: { _controller: GOLContentBundle:Recarga:verrecargas }
+
+# SALDOS
+gol_content_saldo:
+    path:     /saldo
+    defaults: { _controller: GOLContentBundle:Saldo:saldo }
+    
+# LLAMADAS
+gol_content_registrar_llamada:
+    path:     /registrar-llamada
+    defaults: { _controller: GOLContentBundle:Consumo:registrarllamada }
+    
+gol_content_ver_llamadas:
+    path:     /ver-llamadas
+    defaults: { _controller: GOLContentBundle:Consumo:verllamadas }
