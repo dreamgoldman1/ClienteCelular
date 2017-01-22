@@ -4,7 +4,7 @@ $(document).ready(function () {
         no_celular = $("#no_celular_destino").val();
         $.ajax({
             dataType: "json",
-            url: "http://52.24.48.238/api/consulta-saldo-disponible/".no_celular,
+            url: "http://52.24.48.238/api/consulta-saldo-disponible/"+no_celular,
         }).done(function (data) {
             console.log(data);
             var valorLlamada;

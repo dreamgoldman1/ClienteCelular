@@ -30,7 +30,7 @@ class ApiController extends Controller {
 
         //o el error, por si falla
         $error = \curl_error($ch);
-
+        
         //y finalmente cerramos curl
         \curl_close($ch);
         
