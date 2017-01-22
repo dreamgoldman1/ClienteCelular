@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#boton-llamar').click(function () {
         var no_celular;
-        no_celular = $("#no_celular_destino").val();
+        no_celular = $("#no_celular_origen").val();
         $.ajax({
             dataType: "json",
             url: "http://52.24.48.238/api/consulta-saldo-disponible/"+no_celular,
