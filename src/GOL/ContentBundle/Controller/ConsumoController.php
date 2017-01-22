@@ -49,52 +49,6 @@ class ConsumoController extends Controller
         ));
     }
     
-    public function getConsumosCelular($noTelefono) {
-        $consumos = array(
-            array(
-                'id' => '1',
-                'no_celular_de' => '3001234567',
-                'no_celular_a' => '3001234568',
-                'tiempo' => '20',
-                'fecha' => '2016-01-01',
-                'valor' => '2000',
-            ),
-            array(
-                'id' => '2',
-                'no_celular_de' => '3001234567',
-                'no_celular_a' => '3001234568',
-                'tiempo' => '20',
-                'fecha' => '2016-01-01',
-                'valor' => '2000',
-            ),
-            array(
-                'id' => '3',
-                'no_celular_de' => '3001234567',
-                'no_celular_a' => '3001234568',
-                'tiempo' => '20',
-                'fecha' => '2016-01-01',
-                'valor' => '2000',
-            ),
-            array(
-                'id' => '4',
-                'no_celular_de' => '3001234567',
-                'no_celular_a' => '3001234568',
-                'tiempo' => '20',
-                'fecha' => '2016-01-01',
-                'valor' => '2000',
-            ),
-            array(
-                'id' => '5',
-                'no_celular_de' => '3001234567',
-                'no_celular_a' => '3001234568',
-                'tiempo' => '20',
-                'fecha' => '2016-01-01',
-                'valor' => '2000',
-            ),
-        );
-        return $consumos;
-    }
-    
     public function getEnv() {
         global $kernel;
         return $kernel->getEnvironment() == "prod" ? "/" : "/app_dev.php/";

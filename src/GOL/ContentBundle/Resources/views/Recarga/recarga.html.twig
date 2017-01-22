@@ -30,12 +30,12 @@
                                 {% if respuesta.Estado == 'Ok' %}
                                     <div id="confirmacion" class="custom-alerts alert alert-success fade in">
                                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                                        <i class="fa-lg fa fa-check-square"></i>  Se ha realizado la llamada de forma exitosa
+                                        <i class="fa-lg fa fa-check-square"></i>  Se ha realizado la recarga de forma exitosa
                                     </div>
                                 {% elseif respuesta.Estado == 'Error' %}
                                     <div id="confirmacion" class="custom-alerts alert alert-danger fade in">
                                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                                        <i class="fa-lg fa fa-warning"></i>  Se ha presentado un prolema al momento de realizar la llamada
+                                        <i class="fa-lg fa fa-warning"></i>  Se ha presentado un prolema al momento de realizar la recarga
                                     </div>
                                 {% endif %}                            
                                 <!--
